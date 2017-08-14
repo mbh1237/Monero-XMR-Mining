@@ -1,0 +1,10 @@
+$ sudo apt-get install libcurl4-gnutls-dev automake build-essential git
+$ sudo apt-get install libtool
+$ sudo apt-get install libssl-dev
+$ git clone https://github.com/LucasJones/cpuminer-multi.git
+$ cd cpuminer-multi
+$ echo "autoreconf -i" >> autogen.sh
+$ ./autogen.sh
+$ sudo CFLAGS="-march=native" ./configure
+$ sudo make
+$ ./minerd -t 8 -a cryptonight -o stratum+tcp://asia.cryptonight-hub.miningpoolhub.com:20580 -u youraddresshere -p x -B -q
